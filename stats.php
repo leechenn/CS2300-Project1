@@ -2,28 +2,83 @@
 include("includes/init.php");
 $current_page_id="STATS";
 ?>
+<!-- the csv stats is cited from website, I display citation below table, I use php read function to load data and display them on my page -->
+<!-- define a array to select some column data from csv data -->
+    <?php
+    $attrArray = array(0=>"Season",2=>"Team",23=>"Rebound",24=>"Assist",25=>"Steal",26=>"Block",29=>"Points");
+    $file = fopen("dataset/lebronStats.csv","r");
+    while($data = fgetcsv($file)){
+      $data_list[]=$data;
+    }
+    fclose($file);
+    // create a new array which will be stored in table
+    for($x=1;$x<count($data_list);$x++){
+      $seasonArray;
+      foreach($attrArray as $index=>$attr){
+        $seasonArray[$attr]=$data_list[$x][$index];
+      }
+      $season_list[]=$seasonArray;
+
+    }
+// define functions to store each season's data to table conviently using php
+    function print_data_for_eachseason($seasonArray){
+      $season="";
+      foreach($seasonArray as $index=>$attr){
+        $season.= "<td>".$attr."</td>";
+
+      }
+      return $season;
+    }
+
+
+    function print_data_for_season($season_list){
+      $all="";
+      foreach($season_list as $index=>$seasonArray){
+        $all.= "<tr>".print_data_for_eachseason($seasonArray)."</tr>";
+      }
+      return $all;
+    }
+    ?>
 
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- <link id="theme-style" rel="stylesheet" href="assets/css/styles.css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Shadows+Into+Light" rel="stylesheet">
-    <script src="assets/js/mainstyle.js"></script>
-    <link href="assets/css/mainpage.css" rel="stylesheet">
-  </head>
-  <body>
-      <?php include("includes/header.php"); ?>
-        <?php include("includes/footer.php");?>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Stats</title>
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <link href="css/font.css" rel="stylesheet">
+  <link href="css/mainpage.css" rel="stylesheet">
+  <link href="css/stats.css" rel="stylesheet">
+  <script src="scripts/mainstyle.js"></script>
+</head>
+<body>
+  <?php include("includes/header.php"); ?>
+  <div class="container stats-container">
+
+    <h1>King's Stats</h1>
+
+    <p class="page-description text-center">Career Stats Table</p>
+
+    <div id="table">
+      <table>
+        <tr>
+          <?php
+          foreach($attrArray as $index=>$attr){
+            echo "<th>".$attr."</th>";
+          }
+          ?>
+        </tr>
+        <?php
+        echo print_data_for_season($season_list);
+        ?>
+
+      </table>
+      <span class="citation">(The stats is extracted from csv. from:<a href="https://www.basketball-reference.com/players/j/jamesle01.html">https://www.basketball-reference.com/players/j/jamesle01.html</a>)</span>
+    </div>
+
+  </div>
+
+  <?php include("includes/footer.php");?>
+</body>
 </html>

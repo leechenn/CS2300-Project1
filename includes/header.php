@@ -1,26 +1,29 @@
-<header>
-  <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded" >
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+<!-- The logo on the left of the header is cited from Nike, I display the citation below the main header picture -->
+
+<header >
+  <nav class="navbar fixed-top" >
+  <a class="navbar-brand" href="#"><img src="../image/logo.png"/></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
       <?php
       foreach($page as $k=>$v){
         if($current_page_id==$v){
-          echo "<a id='current_page' class='nav-item nav-link' href=".$k.".php>".$v."</a>";
+          echo "<li class='nav-item'>"."<a id='current_page' class='nav-link' href=".$k.".php>".$v."</a>"."</li>";
         }
         else{
-          echo "<a class='nav-item nav-link' href=".$k.".php>".$v."</a>";
+          echo "<li class='nav-item'>"."<a class='nav-link' href=".$k.".php>".$v."</a>"."</li>";
         }
       }
-
   ?>
-      <!-- <a class="nav-item nav-link" href="#">HOME</span></a>
-      <a class="nav-item nav-link" href="#">BIOGRAPHY</a>
-      <a class="nav-item nav-link" href="#">STATS</a>
-      <a class="nav-item nav-link" href="#">GALLERY</a> -->
+  </ul>
+
     </div>
   </div>
   </nav>
-  <div class="jumbotron" id="head" >
+  <div id="head" >
+  <img src="../image/lebron4.jpg">
+  <span class="citation">(This image is cited from Google: <a href="https://images.fineartamerica.com/images-medium-large-5/lebron-james-artwork-1-sheraz-a.jpg">https://images.fineartamerica.com/images-medium-large-5/lebron-james-artwork-1-sheraz-a.jpg</a>)</span>
+  <span class="citation">(The logo is cited from Nike news:<a href="https://news.nike.com/news/lebron-james-a-decade-in-the-making">https://news.nike.com/news/lebron-james-a-decade-in-the-making</a>)</span>
   </div>
 
 

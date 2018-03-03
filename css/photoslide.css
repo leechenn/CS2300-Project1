@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* CSS Document */
+/* CSS used for shoesslide frame */
+#shoe{
+  text-align: center;
+  margin-top:100px;
+  margin-bottom:150px;
+}
+.image img{
+  width:1400px;
+  height:900px;
+  display: none;
+
+}
+
+a{
+  text-decoration:none;
+  margin:0px ;
+  padding:0px;
+  list-style-type:none;
+}
+
+#slide{
+  width:1400px;
+  height:900px;
+  margin: 0px auto;
+  position: relative;
+
+}
+#icon{
+  position: absolute;
+  right:420px;
+  bottom: 20px;
+  z-index: 1;
+
+
+}
+#icon ul li{
+  float:left;
+  margin-left:20px;
+  list-style-type:none;
+
+}
+#slide .icon ul li a {
+  background: black;
+  font-weight:bold;
+  color:white;
+  padding: 5px 10px;
+  opacity: 0.6;
+
+}
+
+#slide .icon ul li a.active{
+  background:#B2B0B0;
+}
+
+.material-icons{
+  font-size:48px;
+  color:aliceblue;
+  background:#B2B0B0;
+  opacity: 0.6;
+  display:inline-block;
+  cursor: pointer;
+  display:none;
+  padding: 10px 10px;
+}
+.navigation{
+  width:600px;
+  height:700px;
+  position:absolute;
+  z-index: 0;
+}
+.navigation.left{
+  left:0px;
+  top:0px;
+}
+.navigation.right{
+  right:0px;
+  top:0px;
+
+}
+.material-icons.left{
+  position: absolute;
+  top:356px;
+  left: 0px;
+}
+.material-icons.right{
+  position: absolute;
+  top:356px;
+  right: 0px;
+}

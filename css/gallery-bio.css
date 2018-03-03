@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* CSS Document */
+/* CSS used for gallery and biography pages */
+.bio-container .row2{
+  border-top: 1px solid grey;
+}
+.bio-container .row3{
+  /* height:600px; */
+  border-top: 1px solid grey;
+}
+
+.bio-container .gallery-row .left{
+  float:left;
+  width:45%;
+  padding: 30px;
+}
+.bio-container .gallery-row .right{
+  float:right;
+  width:45%;
+  padding: 30px;
+  /* margin-top: 100px; */
+}
+
+.bio-container .bio-row.row1 {
+
+  margin: 30px 30px 30px 30px;
+}
+
+.clear{
+  clear:both;
+}
+.align{
+  padding-top: 50px;
+}
+.bio-container h1 {
+  text-align: center;
+  margin-top: 70px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  color: #58595a;
+}
+.bio-container p.page-description {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+.bio-container #row2-left p.page-description {
+  text-align: left;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.bio-container #row3-right p.page-description {
+  text-align: left;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.bio-container img{
+  width:80%;
+  height:80%;
+  margin: 0 auto;
+  display: block;
+}
+
+.bio-container .row{
+  margin:30px;
+}
+
+.gallery-container h1 {
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  color: #58595a;
+}
+.gallery-container p.page-description {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+  padding-left: 150px;
+  padding-right: 150px;
+  word-break: break-all;
+}
+#lbj-gallery .gallery-row{
+  padding: 30px;
+  border-bottom: 1px solid grey;
+
+}
+#lbj-gallery .gallery-row.row2 .picture{
+  width:50%;
+  float: left;
+
+}
+
+#lbj-gallery .gallery-row.row3 #row3-left{
+  width:50%;
+  float: left;
+}
+#lbj-gallery .gallery-row.row3 #row3-right1{
+  width:25%;
+  float: left;
+}
+#lbj-gallery .gallery-row.row3 #row3-right2{
+  width:25%;
+  float: left;
+}
+#lbj-gallery .gallery-row.row1 img {
+  border-radius: 5px;
+  width:100%;
+
+}
+#lbj-gallery img {
+  border-radius: 5px;
+  width:98%;
+  display: block;
+  margin: 0 auto;
+
+}
