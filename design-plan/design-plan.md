@@ -1,6 +1,5 @@
 # Project 1, Milestone 1 - Design & Plan
 
-Your Name: Chen Li
 
 ## 1. Persona
 
